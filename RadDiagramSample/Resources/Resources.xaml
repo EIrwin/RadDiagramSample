@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Diagrams">
+    
+    <Style x:Key="DesignerDiagramStyle" TargetType="telerik:RadDiagram">
+        <Setter Property="AllowCopy" Value="False" />
+        <Setter Property="AllowCut" Value="False" />
+        <Setter Property="AllowDelete" Value="False" />
+        <Setter Property="AllowPaste" Value="False" />
+        <Setter Property="IsConnectorsManipulationEnabled" Value="False" />
+        <Setter Property="IsEditable" Value="False" />
+        <Setter Property="IsBackgroundSurfaceVisible" Value="True" />
+        <Setter Property="IsSnapToGridEnabled" Value="True" />
+        <Setter Property="GraphSource" Value="{Binding DesignerGraphSource}" />
+    </Style>
+
+    <Style TargetType="telerik:RadDiagramShape">
+        <Setter Property="Position" Value="{Binding Position, Mode=TwoWay}" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="IsResizingEnabled" Value="False" />
+        <Setter Property="IsRotationEnabled" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="telerik:RadDiagramShape">
+                    <Border BorderBrush="Black" Background="Green" Padding="10" CornerRadius="3">
+                        <TextBlock Text="{Binding Timestamp}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+</ResourceDictionary>
