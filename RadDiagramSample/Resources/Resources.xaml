@@ -1,7 +1,11 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Diagrams">
+                    xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Diagrams"
+                    xmlns:views="clr-namespace:RadDiagramSample.Views">
     
+    <views:ControlTemplateSelector x:Key="TemplateSelector"/>
+
+
     <Style x:Key="DesignerDiagramStyle" TargetType="telerik:RadDiagram">
         <Setter Property="AllowCopy" Value="False" />
         <Setter Property="AllowCut" Value="False" />
@@ -13,7 +17,7 @@
         <Setter Property="IsSnapToGridEnabled" Value="True" />
         <Setter Property="GraphSource" Value="{Binding DesignerGraphSource}" />
     </Style>
-
+    
     <Style TargetType="telerik:RadDiagramShape">
         <Setter Property="Position" Value="{Binding Position, Mode=TwoWay}" />
         <Setter Property="BorderBrush" Value="Transparent" />
@@ -23,11 +27,12 @@
             <Setter.Value>
                 <ControlTemplate TargetType="telerik:RadDiagramShape">
                     <Border BorderBrush="Black" Background="Green" Padding="10" CornerRadius="3">
-                        <TextBlock Text="{Binding Timestamp}"/>
+                        <ContentPresenter Content="{Binding}" ContentTemplateSelector="{StaticResource TemplateSelector}"/>
                     </Border>
                 </ControlTemplate>
+                
             </Setter.Value>
         </Setter>
     </Style>
-    
+
 </ResourceDictionary>

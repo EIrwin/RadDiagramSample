@@ -101,6 +101,7 @@
     <Compile Include="ViewModels\DesignerGraphSource.cs" />
     <Compile Include="ViewModels\DesignerViewModel.cs" />
     <Compile Include="Views\Designer.cs" />
+    <Compile Include="Views\ControlTemplateSelector.cs" />
     <Compile Include="Views\Toolbox.xaml.cs">
       <DependentUpon>Toolbox.xaml</DependentUpon>
     </Compile>

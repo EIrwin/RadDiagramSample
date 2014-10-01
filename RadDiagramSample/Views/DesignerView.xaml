@@ -31,6 +31,7 @@
                             IsInformationAdornerVisible="False"
                             Style="{StaticResource DesignerDiagramStyle}">
         </views:Designer>
+       
         
         <telerik:RadDiagramNavigationPane Diagram="{Binding ElementName=Diagram}" x:Name="NavigationPane"
 						HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" />
