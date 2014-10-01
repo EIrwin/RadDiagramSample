@@ -7,6 +7,8 @@ namespace RadDiagramSample.ViewModels
     {
         public DateTime Timestamp { get; set; }
 
+        public string Name { get; set; }
+
         public ControlViewModel()
         {
             Timestamp = DateTime.Now;

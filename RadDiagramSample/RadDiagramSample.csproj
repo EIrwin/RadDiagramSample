@@ -96,6 +96,10 @@
     <Compile Include="Models\ComponentC.cs" />
     <Compile Include="ViewModels\ConnectionViewModel.cs" />
     <Compile Include="Models\IDomainComponent.cs" />
+    <Compile Include="ViewModels\ControlAViewModel.cs" />
+    <Compile Include="ViewModels\ControlBViewModel.cs" />
+    <Compile Include="ViewModels\ControlCViewModel.cs" />
+    <Compile Include="ViewModels\ControlViewModelFactory.cs" />
     <Compile Include="ViewModels\ListBoxViewModel.cs" />
     <Compile Include="ViewModels\ControlViewModel.cs" />
     <Compile Include="ViewModels\DesignerGraphSource.cs" />
@@ -106,6 +110,10 @@
       <DependentUpon>Toolbox.xaml</DependentUpon>
     </Compile>
     <Page Include="Resources\Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\TempResources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

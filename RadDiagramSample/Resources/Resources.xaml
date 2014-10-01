@@ -3,8 +3,11 @@
                     xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Diagrams"
                     xmlns:views="clr-namespace:RadDiagramSample.Views">
     
+    <!--Template Selectors-->
+    
     <views:ControlTemplateSelector x:Key="TemplateSelector"/>
-
+    
+    <!-- Styles -->
 
     <Style x:Key="DesignerDiagramStyle" TargetType="telerik:RadDiagram">
         <Setter Property="AllowCopy" Value="False" />
@@ -26,11 +29,8 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="telerik:RadDiagramShape">
-                    <Border BorderBrush="Black" Background="Green" Padding="10" CornerRadius="3">
-                        <ContentPresenter Content="{Binding}" ContentTemplateSelector="{StaticResource TemplateSelector}"/>
-                    </Border>
+                    <ContentPresenter Content="{Binding}" ContentTemplateSelector="{StaticResource TemplateSelector}"/>
                 </ControlTemplate>
-                
             </Setter.Value>
         </Setter>
     </Style>

@@ -25,12 +25,11 @@ namespace RadDiagramSample.Views
 
         private void RadDiagram_PreviewDrop(object sender, DragEventArgs e)
         {
-            //We most likely want to create this ViewModel
-            //from a factory that creates it from business object
-            ControlViewModel model = new ControlViewModel()
-            {
-                Position = e.GetPosition(this.Diagram),
-            };
+            ListBoxItem listBoxItem = (ListBoxItem) e.Data.GetData(e.Data.GetFormats()[0]);
+            ListBoxViewModel listBoxViewModel = (ListBoxViewModel) listBoxItem.DataContext;
+
+            ControlViewModel model = ControlViewModelFactory.Create(listBoxViewModel.ComponentType.FullName);
+            model.Position = e.GetPosition(this.Diagram);
 
             ViewModel.AddControl(model);
         }
