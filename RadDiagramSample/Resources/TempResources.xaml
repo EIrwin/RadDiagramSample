@@ -1,11 +1,20 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Diagrams"
+                    xmlns:views="clr-namespace:RadDiagramSample.Views"
+                    xmlns:extensions="clr-namespace:Telerik.Windows.Controls.Diagrams.Extensions;assembly=Telerik.Windows.Controls.Diagrams.Extensions">
+
 
     <DataTemplate x:Key="ControlATemplate">
         <Border BorderBrush="Black" Background="LightGray" Padding="10" CornerRadius="3">
             <StackPanel>
                 <TextBlock Text="{Binding Timestamp}"/>
                 <TextBlock Text="{Binding Name}"/>
+                <!--<extensions:RadGeometryDropDownButton>
+                    <extensions:RadGeometryDropDownButton.DropDownContent>
+                        <extensions:SettingsPane Width="235" MinHeight="205" />
+                    </extensions:RadGeometryDropDownButton.DropDownContent>
+                </extensions:RadGeometryDropDownButton>-->
             </StackPanel>
         </Border>
     </DataTemplate>

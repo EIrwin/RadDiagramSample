@@ -20,10 +20,8 @@ namespace RadDiagramSample.ViewModels
             //by asking modules to announce the ControlViewModel
 
             return GetTempControlViewModel(type);
-
         }
 
-       
         public static ControlViewModel GetTempControlViewModel(Type type)
         {
             if (type == typeof (ComponentA))
