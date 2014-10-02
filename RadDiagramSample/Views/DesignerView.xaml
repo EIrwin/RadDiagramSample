@@ -2,7 +2,7 @@
                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                 xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
-        xmlns:views="clr-namespace:RadDiagramSample.Views"
+        xmlns:views="clr-namespace:RadDiagramSample.Views" xmlns:radDiagramSample="clr-namespace:RadDiagramSample"
         Title="MainWindow" Height="550" Width="725">
     <Window.Resources>
         <ResourceDictionary>
@@ -24,13 +24,12 @@
         <views:Toolbox/>
         
         <!-- Designer -->
-        <views:Designer x:Name="Diagram"
+        <radDiagramSample:Designer x:Name="Diagram"
                             Grid.Row="0"
                             Grid.Column="1"
                             PreviewDrop="RadDiagram_PreviewDrop"
-                            IsInformationAdornerVisible="False"
                             Style="{StaticResource DesignerDiagramStyle}">
-        </views:Designer>
+        </radDiagramSample:Designer>
        
         
         <telerik:RadDiagramNavigationPane Diagram="{Binding ElementName=Diagram}" x:Name="NavigationPane"

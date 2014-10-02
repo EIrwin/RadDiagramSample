@@ -5,7 +5,19 @@ namespace RadDiagramSample.ViewModels
 {
     public class ControlViewModel:NodeViewModelBase
     {
-        public DateTime Timestamp { get; set; }
+        private DateTime _timestamp;
+        public DateTime Timestamp
+        {
+            get { return _timestamp; }
+            set
+            {
+                if(_timestamp != value)
+                {
+                    _timestamp = value;
+                    OnPropertyChanged("Timestamp");
+                }
+            }
+        }
 
         public string Name { get; set; }
 

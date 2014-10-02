@@ -91,6 +91,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Designer.xaml.cs">
+      <DependentUpon>Designer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\ComponentA.cs" />
     <Compile Include="Models\ComponentB.cs" />
     <Compile Include="Models\ComponentC.cs" />
@@ -104,11 +107,14 @@
     <Compile Include="ViewModels\ControlViewModel.cs" />
     <Compile Include="ViewModels\DesignerGraphSource.cs" />
     <Compile Include="ViewModels\DesignerViewModel.cs" />
-    <Compile Include="Views\Designer.cs" />
     <Compile Include="Views\ControlTemplateSelector.cs" />
     <Compile Include="Views\Toolbox.xaml.cs">
       <DependentUpon>Toolbox.xaml</DependentUpon>
     </Compile>
+    <Page Include="Designer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Resources\Resources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
