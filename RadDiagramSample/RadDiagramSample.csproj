@@ -107,7 +107,9 @@
     <Compile Include="ViewModels\ControlViewModel.cs" />
     <Compile Include="ViewModels\DesignerGraphSource.cs" />
     <Compile Include="ViewModels\DesignerViewModel.cs" />
-    <Compile Include="Views\ControlTemplateSelector.cs" />
+    <Compile Include="Views\ControlAView.xaml.cs">
+      <DependentUpon>ControlAView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Toolbox.xaml.cs">
       <DependentUpon>Toolbox.xaml</DependentUpon>
     </Compile>
@@ -119,7 +121,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\TempResources.xaml">
+    <Page Include="Views\ControlAView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

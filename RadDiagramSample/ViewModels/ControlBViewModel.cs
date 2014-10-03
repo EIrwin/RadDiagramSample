@@ -4,7 +4,7 @@
     {
         public ControlBViewModel()
         {
-            Name = "ControlB";
+            Name = "Control B";
         }
     }
 }

@@ -1,11 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Diagrams"
-                    xmlns:views="clr-namespace:RadDiagramSample.Views">
-    
-    <!--Template Selectors-->
-    
-    <views:ControlTemplateSelector x:Key="TemplateSelector"/>
+                    xmlns:telerik="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls.Diagrams">
     
     <!-- Styles -->
 
@@ -29,7 +24,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="telerik:RadDiagramShape">
-                    <ContentPresenter Content="{Binding}" ContentTemplateSelector="{StaticResource TemplateSelector}"/>
+                    <Frame Content="{Binding ControlView}" Height="50" Width="100"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
