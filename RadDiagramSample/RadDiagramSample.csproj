@@ -98,7 +98,6 @@
     <Compile Include="Models\ComponentB.cs" />
     <Compile Include="Models\ComponentC.cs" />
     <Compile Include="ViewModels\ConnectionViewModel.cs" />
-    <Compile Include="Models\IDomainComponent.cs" />
     <Compile Include="ViewModels\ControlAViewModel.cs" />
     <Compile Include="ViewModels\ControlBViewModel.cs" />
     <Compile Include="ViewModels\ControlCViewModel.cs" />

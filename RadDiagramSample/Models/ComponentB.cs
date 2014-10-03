@@ -1,10 +1,7 @@
 ﻿namespace RadDiagramSample.Models
 {
-    public class ComponentB:IDomainComponent
+    public class ComponentB
     {
-        public string GetTypeName()
-        {
-            return this.GetType().FullName;
-        }
+
     }
 }

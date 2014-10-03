@@ -23,7 +23,6 @@ namespace RadDiagramSample.ViewModels
                 }
             }
         }
-
         public string Name
         {
             get { return _name; }
@@ -43,6 +42,9 @@ namespace RadDiagramSample.ViewModels
         {
             Timestamp = DateTime.Now;
 
+            //This is only temporary until we 
+            //provide the ability for the 'ControlView'
+            //property to be initialized from a factory
             ControlView = new ControlAView() {DataContext = this};
         }
     }
