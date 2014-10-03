@@ -23,6 +23,7 @@ namespace RadDiagramSample.ViewModels
                 }
             }
         }
+
         public string Name
         {
             get { return _name; }
@@ -42,11 +43,7 @@ namespace RadDiagramSample.ViewModels
         {
             Timestamp = DateTime.Now;
 
-            ControlView = new ControlAView();
-            ////The following is only temporary
-            //ControlAView view = new ControlAView();
-            //view.DataContext = this;
-            //ControlView = view;
+            ControlView = new ControlAView() {DataContext = this};
         }
     }
 }

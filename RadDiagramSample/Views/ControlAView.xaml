@@ -10,7 +10,7 @@
             <StackPanel>
                 <TextBlock Text="{Binding Timestamp}"/>
                 <TextBlock Text="{Binding Name}"/>
-                <StackPanel x:Name="controlAButtonPanel" Background="Transparent">
+                <StackPanel x:Name="controlAButtonPanel">
                         <extensions:RadGeometryDropDownButton PopupPlacementTarget="{Binding ElementName=controlAButtonPanel}">
                             <extensions:RadGeometryDropDownButton.DropDownContent>
                                 <extensions:SettingsPane Height="100px" Width="200px" Margin="10" Padding="10">
