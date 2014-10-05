@@ -91,7 +91,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Designer.xaml.cs">
+    <Compile Include="Views\Designer.xaml.cs">
       <DependentUpon>Designer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\ComponentA.cs" />
@@ -112,7 +112,7 @@
     <Compile Include="Views\Toolbox.xaml.cs">
       <DependentUpon>Toolbox.xaml</DependentUpon>
     </Compile>
-    <Page Include="Designer.xaml">
+    <Page Include="Views\Designer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
