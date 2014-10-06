@@ -28,9 +28,14 @@ namespace RadDiagramSample.Views
             ListBoxItem listBoxItem = (ListBoxItem) e.Data.GetData(e.Data.GetFormats()[0]);
             ListBoxViewModel listBoxViewModel = (ListBoxViewModel) listBoxItem.DataContext;
 
-            ControlViewModel model = ControlViewModelFactory.Create(listBoxViewModel.ComponentType.FullName);
+            ControlViewModel model = ControlViewModelFactory.Create(listBoxViewModel.ComponentType);
             model.Position = e.GetPosition(this.Diagram);
 
+            ControlView view = ControlViewFactory.Create(listBoxViewModel.ViewType);
+            view.DataContext = model;
+
+            //Do we need both of these
+            Diagram.AddShape(view);
             ViewModel.AddControl(model);
         }
     }

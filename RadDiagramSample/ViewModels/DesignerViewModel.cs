@@ -1,19 +1,27 @@
-﻿using Telerik.Windows.Controls;
+﻿using System.Collections.ObjectModel;
+using Telerik.Windows.Controls;
 
 namespace RadDiagramSample.ViewModels
 {
     public class DesignerViewModel : ViewModelBase
     {
-        public DesignerGraphSource DesignerGraphSource { get; private set; }
+        private ObservableCollection<ControlViewModel> Controls { get; set; }
+        private ObservableCollection<ConnectionViewModel> Connections { get; set; }
 
         public DesignerViewModel()
         {
-            DesignerGraphSource = new DesignerGraphSource();
+            Controls = new ObservableCollection<ControlViewModel>();
+            Connections = new ObservableCollection<ConnectionViewModel>();
         }
 
         public void AddControl(ControlViewModel model)
         {
-            DesignerGraphSource.AddNode(model);
+            Controls.Add(model);
+        }
+
+        public void AddConnection(ConnectionViewModel model)
+        {
+            Connections.Add(model);
         }
     }
 }

@@ -15,6 +15,8 @@ namespace RadDiagramSample.ViewModels
 
         public static ControlViewModel Create(Type type)
         {
+            if (type == null)
+                throw new ArgumentNullException("type");
             //We most likely need to retrieve
             //the necessary ControlViewModel implementation
             //by asking modules to announce the ControlViewModel
@@ -26,10 +28,8 @@ namespace RadDiagramSample.ViewModels
         {
             if (type == typeof (ComponentA))
                 return new ControlAViewModel();
-            if (type == typeof (ComponentB))
-                return new ControlBViewModel();
-            if (type == typeof (ComponentC))
-                return new ControlCViewModel();
+            if (type == typeof (Constant))
+                return new ConstantViewModel();
 
             throw new NotImplementedException();
         }

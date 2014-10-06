@@ -91,16 +91,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\Constant.cs" />
+    <Compile Include="ViewModels\ConstantViewModel.cs" />
+    <Compile Include="Views\ControlView.cs" />
+    <Compile Include="Views\ConstantView.xaml.cs">
+      <DependentUpon>ConstantView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ControlViewFactory.cs" />
     <Compile Include="Views\Designer.xaml.cs">
       <DependentUpon>Designer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\ComponentA.cs" />
-    <Compile Include="Models\ComponentB.cs" />
-    <Compile Include="Models\ComponentC.cs" />
     <Compile Include="ViewModels\ConnectionViewModel.cs" />
     <Compile Include="ViewModels\ControlAViewModel.cs" />
-    <Compile Include="ViewModels\ControlBViewModel.cs" />
-    <Compile Include="ViewModels\ControlCViewModel.cs" />
     <Compile Include="ViewModels\ControlViewModelFactory.cs" />
     <Compile Include="ViewModels\ListBoxViewModel.cs" />
     <Compile Include="ViewModels\ControlViewModel.cs" />
@@ -112,6 +115,10 @@
     <Compile Include="Views\Toolbox.xaml.cs">
       <DependentUpon>Toolbox.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\ConstantView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Designer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -1,4 +1,5 @@
 ﻿using Telerik.Windows.Controls.Diagrams.Extensions.ViewModels;
+using Telerik.Windows.Diagrams.Core;
 
 namespace RadDiagramSample.ViewModels
 {

@@ -9,7 +9,6 @@ namespace RadDiagramSample.ViewModels
     public class ControlViewModel:NodeViewModelBase
     {
         private DateTime _timestamp;
-        private string _name;
 
         public DateTime Timestamp
         {
@@ -23,29 +22,10 @@ namespace RadDiagramSample.ViewModels
                 }
             }
         }
-        public string Name
-        {
-            get { return _name; }
-            set
-            {
-                if (_name != value)
-                {
-                    _name = value;
-                    OnPropertyChanged("Name");
-                }
-            }
-        }
-
-        public UIElement ControlView { get; private set; }
 
         public ControlViewModel()
         {
             Timestamp = DateTime.Now;
-
-            //This is only temporary until we 
-            //provide the ability for the 'ControlView'
-            //property to be initialized from a factory
-            ControlView = new ControlAView() {DataContext = this};
         }
     }
 }

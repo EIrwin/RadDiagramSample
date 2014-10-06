@@ -1,22 +1,21 @@
-﻿<views:ControlView x:Class="RadDiagramSample.Views.ControlAView"
+﻿<views:ControlView x:Class="RadDiagramSample.Views.ConstantView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
              xmlns:views="clr-namespace:RadDiagramSample.Views"
-             mc:Ignorable="d" 
+             xmlns:telerik="clr-namespace:Telerik.Windows.Controls.Diagrams;assembly=Telerik.Windows.Controls.Diagrams"
+             mc:Ignorable="d"
              Position="{Binding Position,Mode=TwoWay}">
     
     <!-- Connectors -->
     <views:ControlView.Connectors>
-        <telerik:RadDiagramConnector Name="Input" Offset="0,.5"/>
         <telerik:RadDiagramConnector Name="Output" Offset="1,.5"/>
     </views:ControlView.Connectors>
- 
+
     <!-- Content-->
     <StackPanel>
-        <TextBlock Text="{Binding Timestamp}"/>
+        <TextBlock Text="{Binding Value}"/>
     </StackPanel>
-    
+
 </views:ControlView>

@@ -2,8 +2,11 @@
 
 namespace RadDiagramSample.ViewModels
 {
-    public class ConnectionViewModel:LinkViewModelBase<ControlViewModel>
+    public class ConnectionViewModel : LinkViewModelBase<ControlViewModel>
     {
-        
+        public ConnectionViewModel()
+        {
+            
+        }
     }
 }

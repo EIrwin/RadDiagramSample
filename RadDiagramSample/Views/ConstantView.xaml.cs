@@ -11,16 +11,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Telerik.Windows.Diagrams.Core;
 
 namespace RadDiagramSample.Views
 {
     /// <summary>
-    /// Interaction logic for ControlAView.xaml
+    /// Interaction logic for ConstantView.xaml
     /// </summary>
-    public partial class ControlAView : ControlView
+    public partial class ConstantView : ControlView
     {
-        public ControlAView()
+        public ConstantView()
         {
             InitializeComponent();
         }

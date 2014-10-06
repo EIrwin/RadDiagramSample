@@ -6,6 +6,8 @@ namespace RadDiagramSample.ViewModels
     {
         public Type ComponentType { get; set; }
 
+        public Type ViewType { get; set; }
+
         public string Name { get; set; }
     }
 }

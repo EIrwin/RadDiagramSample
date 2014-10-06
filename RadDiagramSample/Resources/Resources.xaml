@@ -9,25 +9,11 @@
         <Setter Property="AllowCut" Value="False" />
         <Setter Property="AllowDelete" Value="False" />
         <Setter Property="AllowPaste" Value="False" />
-        <Setter Property="IsConnectorsManipulationEnabled" Value="False" />
         <Setter Property="IsEditable" Value="False" />
         <Setter Property="IsBackgroundSurfaceVisible" Value="True" />
         <Setter Property="IsSnapToGridEnabled" Value="True" />
-        <Setter Property="GraphSource" Value="{Binding DesignerGraphSource}" />
-    </Style>
-    
-    <Style TargetType="telerik:RadDiagramShape">
-        <Setter Property="Position" Value="{Binding Position, Mode=TwoWay}" />
-        <Setter Property="BorderBrush" Value="Transparent" />
-        <Setter Property="IsResizingEnabled" Value="False" />
-        <Setter Property="IsRotationEnabled" Value="False" />
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="telerik:RadDiagramShape">
-                    <Frame Content="{Binding ControlView}" Height="50" Width="100"/>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
+        <Setter Property="IsResizingEnabled" Value="False"/>
+        <Setter Property="IsRotationEnabled" Value="False"/>
     </Style>
 
 </ResourceDictionary>

@@ -24,29 +24,22 @@ namespace RadDiagramSample.Views
                 {
                     new ListBoxItem()
                         {
+                            Content = "Constant",
+                            DataContext = new ListBoxViewModel()
+                                {
+                                    ComponentType = typeof(Constant),
+                                    ViewType = typeof(ConstantView),
+                                    Name = "Constant"
+                                }
+                        },
+                    new ListBoxItem()
+                        {
                             Content = "Component A",
                             DataContext = new ListBoxViewModel()
                                 {
                                     ComponentType = typeof (ComponentA),
+                                    ViewType = typeof(ControlAView),
                                     Name = "Component A"
-                                }
-                        },
-                    new ListBoxItem()
-                        {
-                            Content = "Component B",
-                            DataContext = new ListBoxViewModel()
-                                {
-                                    ComponentType = typeof (ComponentB),
-                                    Name = "Component B"
-                                }
-                        },
-                    new ListBoxItem()
-                        {
-                            Content = "Component C",
-                            DataContext = new ListBoxViewModel()
-                                {
-                                    ComponentType = typeof (ComponentC),
-                                    Name = "Component C"
                                 }
                         }
                 };
