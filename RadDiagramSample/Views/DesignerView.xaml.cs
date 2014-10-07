@@ -16,5 +16,17 @@ namespace RadDiagramSample.Views
         {
             InitializeComponent();
         }
+
+        private void Generate_Click(object sender, RoutedEventArgs e)
+        {
+            DesignerViewModel model = Diagram.DataContext as DesignerViewModel;
+            model.Generate();
+        }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            DesignerViewModel model = Diagram.DataContext as DesignerViewModel;
+            model.Save();
+        }
     }
 }

@@ -3,32 +3,46 @@ using Telerik.Windows.Controls;
 
 namespace RadDiagramSample.ViewModels
 {
-    public class DesignerViewModel : ViewModelBase<ControlViewModel,ConnectionViewModel>
+    public class DesignerViewModel : ViewModelBase
     {
-        public override void AddControl(ControlViewModel model)
+
+        private readonly ObservableCollection<ControlViewModel> _controls;
+        private readonly ObservableCollection<ConnectionViewModel> _connections;
+
+        public DesignerViewModel()
         {
-            base.Controls.Add(model);
+            _controls = new ObservableCollection<ControlViewModel>();
+            _connections = new ObservableCollection<ConnectionViewModel>();
         }
 
-        public override void AddConnection(ConnectionViewModel model)
+        public void AddControl(ControlViewModel model)
         {
-            base.Connections.Add(model);
-        }
-    }
-
-    public abstract class ViewModelBase<TControl,TConnection>:ViewModelBase where TControl: ControlViewModel 
-                                                                            where TConnection:ConnectionViewModel
-    {
-        protected readonly ObservableCollection<TControl> Controls;
-        protected readonly ObservableCollection<TConnection> Connections;
-
-        protected ViewModelBase()
-        {
-            Controls = new ObservableCollection<TControl>();
-            Connections = new ObservableCollection<TConnection>();
+            _controls.Add(model);
         }
 
-        public abstract void AddControl(TControl model);
-        public abstract void AddConnection(TConnection model);
+        public void RemoveControl(ControlViewModel model)
+        {
+            _controls.Remove(model);
+        }
+
+        public void AddConnection(ConnectionViewModel model)
+        {
+            _connections.Add(model);
+        }
+
+        public void RemoveConnection(ConnectionViewModel model)
+        {
+            _connections.Remove(model);
+        }
+        
+        public void Save()
+        {
+            
+        }
+
+        public void Generate()
+        {
+            
+        }
     }
 }

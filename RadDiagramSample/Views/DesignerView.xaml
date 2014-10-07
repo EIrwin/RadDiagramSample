@@ -19,19 +19,35 @@
             <ColumnDefinition Width="100"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- Menu -->
+        <Menu Grid.Row="0" 
+              Grid.ColumnSpan="2"
+              Height="20" 
+              IsMainMenu="True">
+            <MenuItem Header="Scripts">
+                <MenuItem Header="Save" Click="Save_Click"/>
+                <MenuItem Header="Generate" Click="Generate_Click"/>
+            </MenuItem>
+        </Menu>
         
         <!-- Toolbox -->
-        <views:Toolbox/>
+        <views:Toolbox Grid.Row="1"/>
         
         <!-- Designer -->
         <views:Designer x:Name="Diagram"
-                            Grid.Row="0"
+                            Grid.Row="1"
                             Grid.Column="1"
                             Style="{StaticResource DesignerDiagramStyle}">
         </views:Designer>
        
-        
+        <!--Designer Navigation -->
         <telerik:RadDiagramNavigationPane Diagram="{Binding ElementName=Diagram}" x:Name="NavigationPane"
-						HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" />
+						HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1"  Grid.Row="1"/>
     </Grid>
 </Window>

@@ -23,9 +23,13 @@ namespace RadDiagramSample.ViewModels
             }
         }
 
+        public Guid ID { get; set; }
+
         public ControlViewModel()
         {
             Timestamp = DateTime.Now;
+
+            ID = Guid.NewGuid();
         }
     }
 }
