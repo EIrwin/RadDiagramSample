@@ -11,7 +11,7 @@ namespace RadDiagramSample.Models
         public string Generate(ComponentElement component, IDictionary<string, string> inputs)
         {
             var builder = new StringBuilder();
-            builder.Append("(function(){ return '").Append(component.Properties.Single(p => p.Name == "DroppedItem").Value).Append("'; }())");
+            builder.Append("(function(){ return '").Append(component.Properties.Single(p => p.Name == "Value").Value).Append("'; }())");
             return builder.ToString();
         }
 
