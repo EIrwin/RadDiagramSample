@@ -27,7 +27,6 @@
         <views:Designer x:Name="Diagram"
                             Grid.Row="0"
                             Grid.Column="1"
-                            PreviewDrop="RadDiagram_PreviewDrop"
                             Style="{StaticResource DesignerDiagramStyle}">
         </views:Designer>
        

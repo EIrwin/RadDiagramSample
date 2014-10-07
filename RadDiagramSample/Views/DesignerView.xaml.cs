@@ -12,31 +12,9 @@ namespace RadDiagramSample.Views
     /// </summary>
     public partial class DesignerView : Window
     {
-        private DesignerViewModel ViewModel;
-
         public DesignerView()
         {
             InitializeComponent();
-
-            ViewModel = new DesignerViewModel();
-
-            this.DataContext = ViewModel;
-        }
-
-        private void RadDiagram_PreviewDrop(object sender, DragEventArgs e)
-        {
-            ListBoxItem listBoxItem = (ListBoxItem) e.Data.GetData(e.Data.GetFormats()[0]);
-            ListBoxViewModel listBoxViewModel = (ListBoxViewModel) listBoxItem.DataContext;
-
-            ControlViewModel model = ControlViewModelFactory.Create(listBoxViewModel.ComponentType);
-            model.Position = e.GetPosition(this.Diagram);
-
-            ControlView view = ControlViewFactory.Create(listBoxViewModel.ViewType);
-            view.DataContext = model;
-
-            //Do we need both of these
-            Diagram.AddShape(view);
-            ViewModel.AddControl(model);
         }
     }
 }

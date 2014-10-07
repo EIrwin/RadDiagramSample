@@ -91,7 +91,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Scripting\IComponentGenerator.cs" />
+    <Compile Include="Scripting\ComponentElement.cs" />
     <Compile Include="Models\Constant.cs" />
+    <Compile Include="Scripting\ContentElement.cs" />
+    <Compile Include="Scripting\IScriptGenerator.cs" />
+    <Compile Include="Scripting\LinkElement.cs" />
+    <Compile Include="Scripting\OptionElement.cs" />
+    <Compile Include="Scripting\PortDirection.cs" />
+    <Compile Include="Scripting\PortElement.cs" />
+    <Compile Include="Scripting\PositionElement.cs" />
+    <Compile Include="Scripting\PropertyElement.cs" />
+    <Compile Include="Scripting\RouteElement.cs" />
     <Compile Include="ViewModels\ConstantViewModel.cs" />
     <Compile Include="Views\ControlView.cs" />
     <Compile Include="Views\ConstantView.xaml.cs">
