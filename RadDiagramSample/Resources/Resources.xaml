@@ -15,5 +15,10 @@
         <Setter Property="IsResizingEnabled" Value="False"/>
         <Setter Property="IsRotationEnabled" Value="False"/>
     </Style>
+    
+    <Style TargetType="telerik:RadDiagramConnection">
+        <Setter Property="ConnectionType" Value="Bezier"/>
+        <Setter Property="TargetCapType" Value="Arrow1"/>
+    </Style>
 
 </ResourceDictionary>
