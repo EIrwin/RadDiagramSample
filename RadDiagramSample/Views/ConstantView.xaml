@@ -10,7 +10,7 @@
     
     <!-- Connectors -->
     <views:ControlView.Connectors>
-        <telerik:RadDiagramConnector Name="Output" Offset="1,.5"/>
+        <telerik:RadDiagramConnector Name="Output" Offset="1,.5" Height="10" Width="10"/>
     </views:ControlView.Connectors>
 
     <!-- Content-->

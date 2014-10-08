@@ -5,7 +5,6 @@ namespace RadDiagramSample.ViewModels
 {
     public class DesignerViewModel : ViewModelBase
     {
-
         private IDictionary<string,ControlViewModel> _controls;
         private IDictionary<string,ConnectionViewModel> _connections;
 
@@ -33,16 +32,6 @@ namespace RadDiagramSample.ViewModels
         public void RemoveConnection(string id)
         {
             _connections.Remove(id);
-        }
-        
-        public void Save()
-        {
-            
-        }
-
-        public void Generate()
-        {
-            
         }
     }
 }

@@ -8,4 +8,5 @@
              x:Name="Diagram"
              ConnectionManipulationCompleted="Diagram_ConnectionManipulationCompleted"
              PreviewDrop="Diagram_PreviewDrop">
+    
 </telerik:RadDiagram>
