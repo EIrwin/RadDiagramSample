@@ -27,7 +27,7 @@
 
         <!-- Menu -->
         <Menu Grid.Row="0" 
-              Grid.ColumnSpan="2"
+              Grid.ColumnSpan="1"
               Height="20" 
               IsMainMenu="True">
             <MenuItem Header="Scripts">
@@ -35,6 +35,12 @@
                 <MenuItem Header="Generate" Click="Generate_Click"/>
             </MenuItem>
         </Menu>
+        
+        <!-- Context Bar -->
+        <views:ContextBar x:Name="ContextBar"
+                          Grid.Row="0"
+                          Grid.Column="1">
+        </views:ContextBar>
         
         <!-- Toolbox -->
         <views:Toolbox Grid.Row="1"/>

@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="RadDiagramSample.Views.ContextBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <StackPanel Background="White">
+        <ListBox ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                 Name="ContextBarLb">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel IsItemsHost="True" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Setter Property="Background" Value="Gray"/>
+                    <Setter Property="Margin" Value="8,0"/>
+                    <Setter Property="Padding" Value="0"/>
+
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ListBoxItem">
+                                <StackPanel Orientation="Horizontal">
+                                    <Border Background="Gray" BorderThickness="0">
+                                        <Button>
+                                            <ContentPresenter/>
+                                        </Button>
+                                    </Border>
+                                </StackPanel>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <EventSetter Event="PreviewMouseLeftButtonDown" Handler="Item_Click"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+        </ListBox>
+    </StackPanel>
+</UserControl>

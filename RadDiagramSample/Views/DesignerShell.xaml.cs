@@ -18,7 +18,11 @@ namespace RadDiagramSample.Views
 
             DataContext = ViewModel;
 
-            //Initialize DesignerShellViewModel here
+            DesignerViewModel designerViewModel = new DesignerViewModel();
+
+            ViewModel.AddDesigner(designerViewModel);
+
+            this.Diagram.ViewModel = designerViewModel;
         }
 
         private void Generate_Click(object sender, RoutedEventArgs e)
@@ -29,6 +33,11 @@ namespace RadDiagramSample.Views
         private void Save_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void ContextBar_ItemClicked(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

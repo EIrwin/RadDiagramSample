@@ -1,7 +1,7 @@
 ﻿<Application x:Class="RadDiagramSample.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="Views\DesignerView.xaml">
+             StartupUri="Views\DesignerShell.xaml">
     <Application.Resources>
     </Application.Resources>
 </Application>

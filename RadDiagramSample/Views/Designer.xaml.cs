@@ -13,19 +13,22 @@ namespace RadDiagramSample.Views
     /// </summary>
     public partial class Designer : RadDiagram
     {
-        protected DesignerViewModel ViewModel;
+        private DesignerViewModel _viewModel;
+        public DesignerViewModel ViewModel
+        {
+            get { return _viewModel; }
+            set
+            {
+                DataContext = _viewModel;
+                _viewModel = value;
+            }
+        }
 
-        private int Test { get; set; }
         public Designer()
         {
 
             InitializeComponent();
-
-            ViewModel = new DesignerViewModel();
-
-            DataContext = ViewModel;
         }
-
 
         private void Diagram_ConnectionManipulationCompleted(object sender, ManipulationRoutedEventArgs e)
         {
