@@ -92,6 +92,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\ContextBarItem.cs" />
+    <Compile Include="Models\SubRoutineComponent.cs" />
     <Compile Include="Scripting\IComponentGenerator.cs" />
     <Compile Include="Scripting\ComponentElement.cs" />
     <Compile Include="Models\Constant.cs" />

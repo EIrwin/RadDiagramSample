@@ -23,7 +23,7 @@ namespace RadDiagramSample.ViewModels
             }
         }
 
-        public ConstantViewModel()
+        public ConstantViewModel(Type componentType) : base(componentType)
         {
             Value = "Not Set";
         }

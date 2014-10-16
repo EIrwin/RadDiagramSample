@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using RadDiagramSample.Models;
 using RadDiagramSample.ViewModels;
 
 namespace RadDiagramSample.Views
@@ -20,7 +21,7 @@ namespace RadDiagramSample.Views
             //The designer surface is actually just an expanded
             //control/component. We need to make sure to add an initial
             //ControlViewModel object with the 'Expandable' property set to true
-            ControlViewModel model = new ControlViewModel(){Expandable = true};
+            ControlViewModel model = new ControlViewModel(typeof(SubRoutineComponent)){Expandable = true};
             ViewModel.AddControl(model);
             this.Diagram.ViewModel = model;
         }

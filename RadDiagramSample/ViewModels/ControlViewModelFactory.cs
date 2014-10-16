@@ -27,9 +27,9 @@ namespace RadDiagramSample.ViewModels
         public static ControlViewModel GetTempControlViewModel(Type type)
         {
             if (type == typeof (ComponentA))
-                return new ControlAViewModel();
+                return new ControlAViewModel(type);
             if (type == typeof (Constant))
-                return new ConstantViewModel();
+                return new ConstantViewModel(type);
 
             throw new NotImplementedException();
         }

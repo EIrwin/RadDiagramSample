@@ -51,13 +51,16 @@ namespace RadDiagramSample.ViewModels
             }
         }
 
+        public Type ComponentType { get; private set; }
+
         protected readonly IDictionary<string, ControlViewModel> Controls;
         protected readonly IDictionary<string, ConnectionViewModel> Connections;
 
-        public ControlViewModel()
+        public ControlViewModel(Type componentType)
         {
             Timestamp = DateTime.Now;
             Id = Guid.NewGuid();
+            ComponentType = componentType;
 
             Controls = new Dictionary<string, ControlViewModel>();
             Connections = new Dictionary<string,ConnectionViewModel>();
