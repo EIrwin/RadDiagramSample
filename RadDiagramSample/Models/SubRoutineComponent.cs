@@ -1,6 +1,6 @@
 ﻿namespace RadDiagramSample.Models
 {
-    public class SubRoutineComponent
+    public class SubRoutine
     {
         
     }

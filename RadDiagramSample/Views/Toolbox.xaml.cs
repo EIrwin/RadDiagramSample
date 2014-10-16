@@ -41,6 +41,16 @@ namespace RadDiagramSample.Views
                                     ViewType = typeof(ControlAView),
                                     Name = "Component A"
                                 }
+                        },
+                    new ListBoxItem()
+                        {
+                            Content = "Where",
+                            DataContext = new ListBoxViewModel()
+                                {
+                                    ComponentType = typeof(Where),
+                                    ViewType = typeof(WhereView),
+                                    Name = "Where"
+                                }
                         }
                 };
 

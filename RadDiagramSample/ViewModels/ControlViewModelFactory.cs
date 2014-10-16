@@ -30,6 +30,8 @@ namespace RadDiagramSample.ViewModels
                 return new ControlAViewModel(type);
             if (type == typeof (Constant))
                 return new ConstantViewModel(type);
+            if (type == typeof (Where))
+                return new WhereViewModel(type);
 
             throw new NotImplementedException();
         }

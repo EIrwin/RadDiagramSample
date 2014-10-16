@@ -21,7 +21,7 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="30"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
@@ -38,8 +38,10 @@
         
         <!-- Context Bar -->
         <views:ContextBar x:Name="ContextBar"
+                          Height="50"
                           Grid.Row="0"
-                          Grid.Column="1">
+                          Grid.Column="1"
+                          ItemDisplayPath="Id">
         </views:ContextBar>
         
         <!-- Toolbox -->
@@ -53,7 +55,11 @@
         </views:Designer>
        
         <!--Designer Navigation -->
-        <telerik:RadDiagramNavigationPane Diagram="{Binding ElementName=Diagram}" x:Name="NavigationPane"
-						HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1"  Grid.Row="1"/>
+        <telerik:RadDiagramNavigationPane x:Name="NavigationPane"
+                                          Diagram="{Binding ElementName=Diagram}" 
+                                          HorizontalAlignment="Left" 
+                                          VerticalAlignment="Bottom" 
+                                          Grid.Column="1"  
+                                          Grid.Row="1"/>
     </Grid>
 </Window>

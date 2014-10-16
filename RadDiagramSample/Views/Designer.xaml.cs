@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Linq;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
+using RadDiagramSample.Events;
 using RadDiagramSample.ViewModels;
 using Telerik.Windows.Controls;
 using Telerik.Windows.Controls.Diagrams;
@@ -26,7 +29,6 @@ namespace RadDiagramSample.Views
 
         public Designer()
         {
-
             InitializeComponent();
         }
 
@@ -64,7 +66,7 @@ namespace RadDiagramSample.Views
             }
         }
 
-        private void Diagram_PreviewDrop(object sender, System.Windows.DragEventArgs e)
+        private void Diagram_PreviewDrop(object sender, DragEventArgs e)
         {
             ListBoxItem listBoxItem = (ListBoxItem)e.Data.GetData(e.Data.GetFormats()[0]);
             ListBoxViewModel listBoxViewModel = (ListBoxViewModel)listBoxItem.DataContext;
@@ -78,8 +80,13 @@ namespace RadDiagramSample.Views
             //Generate the View based on the business
             //object that the ListBoxViewModel references
             ControlView view = ControlViewFactory.Create(listBoxViewModel.ViewType);
-            view.DataContext = model; 
+            view.DataContext = model;
+            view.PreviewMouseLeftButtonDown += (obj, args) => ControlClicked(obj, new ControlClickedEventArgs(view));
             Diagram.AddShape(view);
         }
+
+        public EventHandler<ControlClickedEventArgs> ControlClicked { get; set; }
     }
+
+    
 }

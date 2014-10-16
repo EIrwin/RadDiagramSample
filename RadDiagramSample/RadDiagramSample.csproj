@@ -91,8 +91,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Events\ControlClickedEventArgs.cs" />
     <Compile Include="Models\ContextBarItem.cs" />
     <Compile Include="Models\SubRoutineComponent.cs" />
+    <Compile Include="Models\WhereComponent.cs" />
     <Compile Include="Scripting\IComponentGenerator.cs" />
     <Compile Include="Scripting\ComponentElement.cs" />
     <Compile Include="Models\Constant.cs" />
@@ -107,7 +109,7 @@
     <Compile Include="Scripting\RouteElement.cs" />
     <Compile Include="ViewModels\ConstantViewModel.cs" />
     <Compile Include="ViewModels\DesignerShellViewModel.cs" />
-    <Compile Include="ViewModels\SubRoutineViewModel.cs" />
+    <Compile Include="ViewModels\WhereViewModel.cs" />
     <Compile Include="Views\ContextBar.xaml.cs">
       <DependentUpon>ContextBar.xaml</DependentUpon>
     </Compile>
@@ -131,6 +133,9 @@
     </Compile>
     <Compile Include="Views\Toolbox.xaml.cs">
       <DependentUpon>Toolbox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WhereView.xaml.cs">
+      <DependentUpon>WhereView.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\ConstantView.xaml">
       <SubType>Designer</SubType>
@@ -164,6 +169,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\Toolbox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WhereView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
