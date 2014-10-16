@@ -13,8 +13,8 @@ namespace RadDiagramSample.Views
     /// </summary>
     public partial class Designer : RadDiagram
     {
-        private DesignerViewModel _viewModel;
-        public DesignerViewModel ViewModel
+        private ControlViewModel _viewModel;
+        public ControlViewModel ViewModel
         {
             get { return _viewModel; }
             set

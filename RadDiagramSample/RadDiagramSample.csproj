@@ -91,6 +91,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\ContextBarItem.cs" />
     <Compile Include="Scripting\IComponentGenerator.cs" />
     <Compile Include="Scripting\ComponentElement.cs" />
     <Compile Include="Models\Constant.cs" />
@@ -104,6 +105,11 @@
     <Compile Include="Scripting\PropertyElement.cs" />
     <Compile Include="Scripting\RouteElement.cs" />
     <Compile Include="ViewModels\ConstantViewModel.cs" />
+    <Compile Include="ViewModels\DesignerShellViewModel.cs" />
+    <Compile Include="ViewModels\SubRoutineViewModel.cs" />
+    <Compile Include="Views\ContextBar.xaml.cs">
+      <DependentUpon>ContextBar.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ControlView.cs" />
     <Compile Include="Views\ConstantView.xaml.cs">
       <DependentUpon>ConstantView.xaml</DependentUpon>
@@ -119,7 +125,6 @@
     <Compile Include="ViewModels\ListBoxViewModel.cs" />
     <Compile Include="ViewModels\ControlViewModel.cs" />
     <Compile Include="ViewModels\DesignerGraphSource.cs" />
-    <Compile Include="ViewModels\DesignerViewModel.cs" />
     <Compile Include="Views\ControlAView.xaml.cs">
       <DependentUpon>ControlAView.xaml</DependentUpon>
     </Compile>
@@ -127,6 +132,10 @@
       <DependentUpon>Toolbox.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\ConstantView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ContextBar.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

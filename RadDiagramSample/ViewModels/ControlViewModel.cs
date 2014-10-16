@@ -1,5 +1,6 @@
 ﻿ using System;
-using System.Windows;
+ using System.Collections.Generic;
+ using System.Windows;
 using System.Windows.Controls;
 using RadDiagramSample.Views;
 using Telerik.Windows.Controls.Diagrams.Extensions.ViewModels;
@@ -9,7 +10,6 @@ namespace RadDiagramSample.ViewModels
     public class ControlViewModel:NodeViewModelBase
     {
         private DateTime _timestamp;
-
         public DateTime Timestamp
         {
             get { return _timestamp; }
@@ -23,13 +23,64 @@ namespace RadDiagramSample.ViewModels
             }
         }
 
-        public Guid Id { get; set; }
+        private Guid _id;
+        public Guid Id
+        {
+            get { return _id; }
+            set
+            {
+                if (_id != value)
+                {
+                    _id = value;
+                    OnPropertyChanged("Id");
+                }
+            }
+        }
+
+        private bool _expandable;
+        public bool Expandable
+        {
+            get { return _expandable; }
+            set
+            {
+                if (_expandable != value)
+                {
+                    _expandable = value;
+                    OnPropertyChanged("Expandable");
+                }
+            }
+        }
+
+        protected readonly IDictionary<string, ControlViewModel> Controls;
+        protected readonly IDictionary<string, ConnectionViewModel> Connections;
 
         public ControlViewModel()
         {
             Timestamp = DateTime.Now;
-
             Id = Guid.NewGuid();
+
+            Controls = new Dictionary<string, ControlViewModel>();
+            Connections = new Dictionary<string,ConnectionViewModel>();
+        }
+
+        public void AddControl(ControlViewModel model)
+        {
+            Controls.Add(model.Id.ToString(), model);
+        }
+
+        public void RemoveControl(ControlViewModel model)
+        {
+            Controls.Remove(model.Id.ToString());
+        }
+
+        public void AddConnection(ConnectionViewModel model)
+        {
+            Connections.Add(model.Id, model);
+        }
+
+        public void RemoveConnection(string id)
+        {
+            Connections.Remove(id);
         }
     }
 }

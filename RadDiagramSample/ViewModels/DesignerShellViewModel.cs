@@ -6,17 +6,17 @@ namespace RadDiagramSample.ViewModels
 {
     public class DesignerShellViewModel:ViewModelBase
     {
-        private List<DesignerViewModel> _designers;
+        private readonly List<ControlViewModel> _controls;
 
         public DesignerShellViewModel()
         {
-            _designers = new List<DesignerViewModel>();
+            _controls = new List<ControlViewModel>();
         }
 
-        public void AddDesigner(DesignerViewModel model)
+        public void AddControl(ControlViewModel model)
         {
-            if (_designers.All(p => p != model))
-                _designers.Add(model);
+            if (_controls.All(p => p != model))
+                _controls.Add(model);
             
         }
     }
