@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -36,7 +37,6 @@ namespace RadDiagramSample.Views
         {
             if (e.Shape == null)
             {
-                
                 if (Diagram.Connections.Contains(e.ManipulationPoint.Connection))
                 {
                     Diagram.RemoveConnection(e.ManipulationPoint.Connection);
@@ -75,14 +75,69 @@ namespace RadDiagramSample.Views
             //object that the ListBoxViewModel references
             ControlViewModel model = ControlViewModelFactory.Create(listBoxViewModel.ComponentType);
             model.Position = e.GetPosition(Diagram);
+            model.ViewType = listBoxViewModel.ViewType; //@Joe - should we do this?
             ViewModel.AddControl(model);
 
             //Generate the View based on the business
             //object that the ListBoxViewModel references
             ControlView view = ControlViewFactory.Create(listBoxViewModel.ViewType);
             view.DataContext = model;
-            view.PreviewMouseLeftButtonDown += (obj, args) => ControlClicked(obj, new ControlClickedEventArgs(view));
+            view.PreviewMouseLeftButtonDown += Diagram_ControlClicked;
             Diagram.AddShape(view);
+        }
+
+        private void Diagram_ControlClicked(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ClickCount == 2)
+            {
+                ControlView view = (ControlView) sender;
+                ViewModel = view.DataContext as ControlViewModel;
+                ControlClicked(sender, new ControlClickedEventArgs(view));
+            }
+        }
+
+        public void Load(ControlViewModel model)
+        {
+            Diagram.ViewModel = model;
+
+            List<ControlViewModel> controls = new List<ControlViewModel>();
+
+            if (model.GetConnections().Any())
+            {
+                foreach (ConnectionViewModel m in model.GetConnections())
+                {
+                    ControlViewModel source = model.GetControls().First(p => p.Id == m.Source.Id);
+                    ControlView sourceView = ControlViewFactory.Create(source.ViewType);
+                    sourceView.DataContext = source;
+                    sourceView.Position = source.Position;
+                    sourceView.PreviewMouseLeftButtonDown += Diagram_ControlClicked;
+
+                    ControlViewModel target = model.GetControls().First(p => p.Id == m.Target.Id);
+                    ControlView targetView = ControlViewFactory.Create(target.ViewType);
+                    targetView.DataContext = target;
+                    targetView.Position = target.Position;
+                    targetView.PreviewMouseLeftButtonDown += Diagram_ControlClicked;
+
+                    Diagram.AddConnection(sourceView,targetView);
+
+                    if (!controls.Any(p => p.Id == source.Id))
+                        Diagram.AddShape(sourceView);
+
+                    if (!controls.Any(p => p.Id == target.Id))
+                        Diagram.AddShape(targetView);
+                }
+            }
+            foreach (ControlViewModel m in model.GetControls())
+            {
+                if (!controls.Any(p => p.Id == m.Id))
+                {
+                    ControlView view = ControlViewFactory.Create(m.ViewType);
+                    view.DataContext = m;
+                    view.Position = m.Position;
+                    view.PreviewMouseLeftButtonDown += Diagram_ControlClicked;
+                    Diagram.AddShape(view);
+                }
+            }
         }
 
         public EventHandler<ControlClickedEventArgs> ControlClicked { get; set; }

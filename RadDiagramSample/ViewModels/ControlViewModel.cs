@@ -1,5 +1,6 @@
 ﻿ using System;
  using System.Collections.Generic;
+ using System.Linq;
  using System.Windows;
 using System.Windows.Controls;
 using RadDiagramSample.Views;
@@ -52,6 +53,7 @@ namespace RadDiagramSample.ViewModels
         }
 
         public Type ComponentType { get; private set; }
+        public Type ViewType { get; set; }
 
         protected readonly IDictionary<string, ControlViewModel> Controls;
         protected readonly IDictionary<string, ConnectionViewModel> Connections;
@@ -84,6 +86,16 @@ namespace RadDiagramSample.ViewModels
         public void RemoveConnection(string id)
         {
             Connections.Remove(id);
+        }
+
+        public List<ControlViewModel> GetControls()
+        {
+            return Controls.Values.ToList();
+        }
+
+        public List<ConnectionViewModel> GetConnections()
+        {
+            return Connections.Values.ToList();
         }
     }
 }

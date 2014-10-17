@@ -76,11 +76,21 @@ namespace RadDiagramSample.Views
 
         public void AddItem(ContextBarItem item)
         {
-            _items.Push(item.Value);
+            AddItem(item.Value);
+        }
+
+        public void AddItem(object value)
+        {
+            _items.Push(value);
             UpdateContextBar();
         }
 
         public void RemoveItem(ContextBarItem item)
+        {
+            RemoveItem(item.Value);
+        }
+
+        public void RemoveItem(object value)
         {
             //One item must always be present
             //on the context bar
@@ -88,7 +98,7 @@ namespace RadDiagramSample.Views
             {
                 //Check to see if top item on stack was clicked
                 //Only pop off stack if they did not click this item
-                while (item != null && !_items.Peek().Equals(item.Value))
+                while (value != null && !_items.Peek().Equals(value))
                 {
                     _items.Pop();
                     UpdateContextBar();
@@ -109,6 +119,10 @@ namespace RadDiagramSample.Views
 
         protected void OnItemClicked(ItemClickedEventArgs e)
         {
+            //We need to determine if we should remove
+            //the items automatically, let the invoker
+            //remove it manually or make it configurable
+
             if (ItemClicked != null)
                 ItemClicked(this, e);
         }

@@ -2,6 +2,7 @@
 using RadDiagramSample.Events;
 using RadDiagramSample.Models;
 using RadDiagramSample.ViewModels;
+using Telerik.Windows.Controls;
 
 namespace RadDiagramSample.Views
 {
@@ -23,7 +24,7 @@ namespace RadDiagramSample.Views
             //control/component. We need to make sure to add an initial
             //ControlViewModel object with the 'Expandable' property set to true
             ControlViewModel model = new ControlViewModel(typeof(SubRoutine)){Expandable = true};
-            ViewModel.AddControl(model);
+            ViewModel.ControlStack.Push(model);
             this.Diagram.ViewModel = model;
 
             //We want to initialize the context bar with the 
@@ -46,8 +47,19 @@ namespace RadDiagramSample.Views
 
         private void ContextBar_ItemClicked(object sender, ItemClickedEventArgs e)
         {
-            //Need to update the context bar and our list of controls
+            if (ViewModel.ControlStack.Count > 1)
+            {
+                //Check to see if top item on stack was clicked
+                //Only pop off stack if they did not click this item
+                while (!ViewModel.ControlStack.Peek().Equals(e.Item))
+                {
+                    ViewModel.ControlStack.Pop();
+                    ContextBar.RemoveItem(e.Item);
+                }
 
+                //Load control into Designer
+                Diagram.Load(ViewModel.ControlStack.Peek()); //Not sure about this
+            }
         }
 
         private void Diagram_ControlClicked(object sender, ControlClickedEventArgs e)
@@ -59,7 +71,7 @@ namespace RadDiagramSample.Views
             //explicitly set upon creation of the object
             if (model.Expandable)
             {
-                ViewModel.AddControl(model);
+                ViewModel.ControlStack.Push(model);
 
                 ContextBarItem item = new ContextBarItem(model);
                 ContextBar.AddItem(item);
