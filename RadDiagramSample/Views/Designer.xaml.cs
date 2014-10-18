@@ -97,7 +97,7 @@ namespace RadDiagramSample.Views
 
         private void Diagram_ControlClicked(object sender, MouseButtonEventArgs e)
         {
-            if (e.ClickCount == 2)
+            if (e.ClickCount  == 2)
             {
                 ControlView view = (ControlView) sender;
                 ViewModel = view.DataContext as ControlViewModel;
